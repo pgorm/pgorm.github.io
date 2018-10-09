@@ -11,16 +11,20 @@
 		<meta name="author" content="Peter Gorman">
 
 		<!-- STYLESHEETS -->
-		<link rel="icon" href="../../src/img/icons.png">
-		<link rel="stylesheet" type="text/css" href="../../src/css/style.css"/>
+		<link rel="icon" href="src/img/icons.png">
+		<link rel="stylesheet" type="text/css" href="src/css/style.css"/>
 
-		<link rel="stylesheet" type="text/css" href="../../src/bootstrap/css/bootstrap.min.css"/>
-		<link href="../../src/css/fontawesome-all.min.css" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="src/css/default.css"/>
+		<link rel="stylesheet" type="text/css" href="src/css/component.css"/>
+
+		<link rel="stylesheet" type="text/css" href="src/bootstrap/css/bootstrap.min.css"/>
+		<link rel="stylesheet" type="text/css" href="src/css/fontawesome-all.min.css">
+
+		<!-- TEMP -->
+		<script src="src/js/modernizr.custom.js"></script>
 
 		<!-- TITLE -->
-		<title>Peter Gorman</title>
-		
-		
+		<title>Peter Gorman | Personal Website</title>
 	</head>
 	<body id="page-top">
 		<nav class="navbar navbar-expand-md navbar-static-top my-navbar">
@@ -31,13 +35,13 @@
 				<div class="collapse navbar-collapse" id="navbarResponsive">
 					<ul class="navbar-nav ml-auto">
 						<li class="nav-item">
-							<a class="nav-link js-scroll-trigger" href="../../">Home</a>
+							<a class="nav-link js-scroll-trigger" href=""><b>Home</b></a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link js-scroll-trigger" href="../../about/">About</a>
+							<a class="nav-link js-scroll-trigger" href="about/">About</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link js-scroll-trigger" href="../../t/">Thoughts</a>
+							<a class="nav-link js-scroll-trigger" href="t/">Thoughts</a>
 						</li>
 						<li class="nav-item">
 							<a class="nav-link js-scroll-trigger" href="CV.pdf">CV</a>
@@ -51,161 +55,85 @@
 			<br>
 			<small class="navbar-brand-small"> Engineering, Product & Strategy </small></h3>
 		</div>
-		<a href="../../">
-			<div class="back-button">
-				<div style="height: 100%; width: 100%; position: relative;" title="Back a page">
-					<i class="fas fa-angle-left"> </i>
-					<i class="fas fa-angle-double-left"> </i>
-				</div>
+		<div class="container-fluid my-container">
+			<div class="main">
+				<ul id="og-grid" class="og-grid">
+					<li>
+						<a href="p/1018-ProductEstimate/" data-largesrc="src/img/BikeRental.jpg" data-title="Product Estimation" data-description="This post demonstrates two methods for estimating solutions to estimation problems.">
+							<div class="og-grid-border" style="border-color: #e7e5e6;">
+								<img src="src/img/thumbs/BikeRental.jpg" alt="img01"/>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="p/1217-Rent2End/" data-largesrc="src/img/Rent2End.jpg" data-title="Rent2End" data-description="This project created a plan for a SaaS business as part of a University module.  The project included idea evaluation, market research, business plan development, risk analysis and a pitch to investors.">
+							<div class="og-grid-border" style="border-color: #0b5bb466;"> 
+ 								<img src="src/img/thumbs/Rent2End.jpg" alt="img01"/>
+ 							</div>  
+						</a>
+					</li>
+					<li>
+						<a href="p/1017-TakeNote/" data-largesrc="src/img/TakeNote.jpg" data-title="TakeNote" data-description="As a team of eight, we created the business plan for a technology StartUp called ‘TakeNote’. The business was centred around an app that could transcribe and summarise meetings to improve the productivity of employees.">
+							<div class="og-grid-border" style="border-color: #fed966;">  
+								<img src="src/img/thumbs/TakeNote.jpg" alt="img02"/>
+							</div> 
+						</a>
+					</li>
+					<li>
+						<a href="p/0116-ARMHack/" data-largesrc="src/img/ARMHack.jpg" data-title="ARM Hackathon" data-description="A 24-hour hackathon in which as a team of five, we designed and created a glove that could interpret sign language gestures and translate them into an audio output. The project received the ‘Highly Commended Award’.">
+							<div class="og-grid-border" style="border-color: #0091bd;">
+							 	<img src="src/img/thumbs/ARMHack.jpg" alt="img03"/> 
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="p/1215-RobotWars/" data-largesrc="src/img/RobotWars.jpg" data-title="Robot Wars" data-description="An annual Robot Wars competition hosted by the University of Bristol where as a team of three, we designed and built a ant-weight robot for a bracketed tournament.">
+							<div class="og-grid-border" style="border-color: #333e50;">
+								<img src="src/img/thumbs/RobotWars.jpg" alt="img04"/>
+							</div> 
+						</a>
+					</li>
+					<li>
+						<a href="p/0815-VisualWeather/" data-largesrc="src/img/VisualWeather.jpg" data-title="Visual Weather Forecast" data-description="This project provides a visual forecast of the weeks weather by flashing a series of LEDs.">
+							<div class="og-grid-border" style="border-color: #bdd7ee;">
+								<img src="src/img/thumbs/VisualWeather.jpg" alt="img02"/>
+							</div> 
+						</a>
+					</li>
+					<li>
+						<a href="p/0815-Clock/" data-largesrc="src/img/BinaryClock.jpg" data-title="Binary Clock" data-description="An clock composed of LEDs to display the time (and day of the week) in a binary format.">
+							<div class="og-grid-border" style="border-color: #a8d18d;">
+								<img src="src/img/thumbs/BinaryClock.jpg" alt="img03"/>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="p/0715-LEDCube/" data-largesrc="src/img/LEDCube.jpg" data-title="LED Cube" data-description="A 3D cube of LEDs that light up to display an array of patterns">
+							<div class="og-grid-border" style="border-color: #f8cbac;">
+								<img src="src/img/thumbs/LEDCube.jpg" alt="img01"/>
+							</div>
+						</a>
+					</li>
+				</ul>
 			</div>
-		</a>
-		<section>
-			<br>
-			<!-- <div class="row">
-				<div class="header-img" style="max-height: 700px;">
-					<img src="../../src/img/Rent2End/img_20160131_103848.jpg"/>
-				</div>
-			</div> -->
-			<div class="container my-container">
-				<div class="row">
-					<div class="my-picture-content">
-						<h5><strong>Introduction</strong></h5>
-						<p>
-						Estimation is a valuable skill in product management as a quick analysis can be used to scope out solutions and reach semi-accurate conclusions.  There are different ways to estimate solutions and each method comes with certain limitations.  Two methods for solving the problem below are outlined:
-						<p>
-						<br>
-						<h4><strong><center><em>How many bicycles are required to start a ride sharing scheme in a large metropolitan area?</em></strong></center></h4>
-						<p>
-						<br>
-						<h6><strong>Method 1: The detailed operation</strong></h6>
-						<ol type="1">
-							<li>Estimate the total population of the core city area where the bike scheme is most likely to be implemented (total addressable market).</li>
-								<ol type="a">
-									<li>Calculate the average number of people in each age bracket for this core population.</li>
-								</ol>
-							<li>Determine which groups of people are most likely to use the bicycle sharing scheme and for what activity e.g. commuting, tourist activities, miscellaneous activities.</li>
-								<ol type="a">
-									<li>Estimate the percentage of people from each age bracket (1.a) that are likely to be interested in using a bike rental scheme for an activity identified in (2.) e.g. commuting.</li>
-									<li>Estimate the percentage of people from (2.a) that are likely to not own a bike (the available market for each activity group).</li>
-									<li>Estimate the percentage of people from (2.a) that are likely to not own a bike (the available market for each activity group).</li>
-									<li>Repeat steps (2.a) to (2.c) for each of the activity groups identified in (2).</li>
-								</ol>
-							<li>Calculate the total amount of bike ride activity per day by adding up the time estimates of all groups involved.</li>
-							<li>Determine what percentage of the market that you think could be obtained within the first 12 months (target market) e.g. 10% of the total identified market in (2.a).  Multiply this percentage by the total hours in (3.) to work out a new estimate for the total number of activity hours per day.</li>
-							<li>Decide on a bike utilisation rate (what percentage of bikes should be in use at any one time on average).  For a 50% bike utilisation rate between the hours of 8am and 12am (16-hour window), each bike needs to be in use for 8 hours.</li>
-							<li>Calculate the total number of bikes required.  Divide the total rider activity per day from (4.) by the utilisation window in (5.).</li>
-						</ol>
-						<p>
-						<h6><strong>Example: A bike sharing operation in London</strong></h6>
-						<ol type="1">
-							<li>London has a downtown population of 9 Million.</li>
-								<ol type="a">
-									<li>Assume that the average number of people in an age bracket of 1 year is uniform and the age range is between 0 and 80 (both very unlikely, but used for a simple analysis):</li>
-									<p>
-									<h6><center><strong>9MM / 80 ~ 112k per age bracket</strong></center></h6>
-								</ol>
-							<li>Focusing on a single activity group of bike users: <strong>Commuters</strong></li>
-								<ol type="a">
-									<li>E.g. 20% of all people in age brackets between 18 and 60 might be interested in commuting by bike.</li>
-									<p>
-									<h6><center><strong>0.2 * 112k * 42 ~ 1MM biking commuters</strong></center></h6>
-									<li>Of the 1MM biking commuters, approximately 30% of the people may not own or have regular access to a bike:</li>
-									<p>
-									<h6><center><strong>0.3 * 1M = 300k potential users</strong></center></h6>
-									<li>Using an average commute time of 20mins by bike and 2 commuting sessions per day:</li>
-									<p>
-									<h6><center><strong>0.33 Hours * 2 Sessions/day ~ 0.66 hours of bike usage per person per day </strong></center></h6>
-								</ol>
-							<li>The total amount of bike rider activity per day for commuters is therefore:</li>
-							<p>
-							<h6><center><strong>0.66 hours * 300k riders ~ 200k hours per day of bike usage</strong></center></h6>
-							<li>To obtain a 10% market share over the first 12 months of the bike scheme we need to obtain:</li>
-							<p>
-							<h6><center><strong>0.1 * 200k hours per day ~ 20k hours per day of bike usage</strong></center></h6>
-							<li>For a 50% utilisation rate of bikes during the 16-hour window of people using the bikes for commuting between 8am and 12am.</li>
-							<li>The total number of bikes required to implement this scheme would be:</li>
-							<p>
-							<div class="center-imgs">
-								<img src="../../src/img/ProdEstimate/ProdEstimateImage1.jpg"  style="width:367px;height:100x;"/>
-							</div>	
-						</ol>
-						<p>
-						<h6><strong>Method 2: Peak usage (+ Example)</strong></h6>
-						This method is slightly different and estimates the number of bikes required based on peak usage of the system.  This analysis will focus on one of the busiest times is the evening commute (5pm to 7pm).  
-						<p>
-						<ol type="1">
-							<li><strong>Follow steps 1. and 2. from Method 1 </strong>and estimate the percentage of people from each activity group that are likely to be interested in using a bike rental scheme for commuting, tourist activities and misc activities between the hours of 5pm to 7pm.</li>
-							<li>Calculate the average time that each group uses the bike for during this period e.g. 20 mins for commuter, 60 mins for tourist and 30 mins for misc activities.</li>
-							<li>Using the information gathered above calculate the total number of hours that the bikes are in use for during this period.</li>
-							<p>							
-							 <table style="width:50%" align="center">
-							  <tr>
-								<th>Group</th>
-								<th>Total Pop</th>
-								<th>Activity Time</th>
-								<th>Bike Usage</th>
-							  </tr>
-							  <tr>
-								<td>Commuters</td>
-								<td>300k</td>
-								<td>0.33 Hours</td>
-								<td>100k Ride Hours</td>
-							  </tr>
-							  <tr>
-								<td>Tourists</td>
-								<td>20k</td>
-								<td>1 Hour</td>
-								<td>20k Ride Hours</td>
-							  </tr
-							  <tr>
-								<td>Misc Activities</td>
-								<td>50k</td>
-								<td>0.5 Hours</td>
-								<td>25k Ride Hours</td>
-							  </tr>
-							</table> 
-							<br>
-							Overall, there is an estimated: <strong>145k hours of bike usage.</strong>
-							<li>If a 10% market share is targeted as in the example above, this leads to <strong>14.5k hours of bike usage.</strong>  A 100% utilisation rate over the two-hour period requires:</li>
-							<div class="center-imgs">
-								<img src="../../src/img/ProdEstimate/ProdEstimateImage2.jpg"  style="width:350px;height:99px;"/>
-							</div>	
-						</ol>
-						<p>
-						<h6><strong>Analysis and Comments</strong></h6>
-						<ol type="1">
-							<li><strong>Ask more questions</strong>– It is important to clarify the scope of the problem to understand the requirements and reduce the number of unknowns.</li>
-							<ol type="a">
-								<li><strong>The geography of a city</strong>– This has important implications on the uptake of a bike rental systems.  The location of train stations, popular business areas, bike lanes should be factored into the decisions process for trailing bike stations.</li>
-								<li><strong>Churn Rate</strong>– What percentage of users do we expect to retain with each use of the scheme?  How will this rate the target uptake in the first year?  How will this affect the number of bikes required over time?</li>
-								<li><strong>The number of bike stations</strong>– The number of bike stations, the size of them, their frequency and popularity within the city needs to be considered.  The overall demand has been calculated in this analysis, but the supply side of the problem presents numerous challenges e.g. bike location matching the demand of stations over time.</li>
-							</ol>
-							<li><strong>Define the problem </strong>– Although the question has already been determined here, in reality it would be important to understand what the underlying problem actually is. Is current public transport overcrowded, late, expensive?  These questions are important when considering the price and location of a bike rental system.</li>
-							<li><strong>Cross analyse results </strong>– The two methods used calculate a different number of bikes required for the operation when considering commuters only.  This doesn’t mean that either solution is wrong but identifies weaknesses in using certain methods and assumptions.</li>
-							<li><strong>Limit the number of estimations </strong>– As the number of estimations increases the accuracy of the model is degraded (particularly estimations that are hard to verify) unless data can be found as justification.  However, for the task rough approximations are expected to be used.</li>
-							<li><strong>Assumptions can be problematic </strong>– This disregards the need for having extra bikes at a station to incentivise new customers into the bike scheme.  In addition, a sudden increase in the number of users in the scheme (e.g. start of tourist season) will risk a bike shortage.</li>
-							<li><strong>Try an MVP operation </strong>– The questions states the number of bikes required for an operation.  However before commencing this project, a smaller test that places a small number of bikes at popular commuter locations and records data on uptake would be incredibly valuable before scaling to a city-wide operation.  Perhaps two further questions that should be looked into are:</li>
-							<ol type="a">
-								<li>How many bikes are needed to start a rental operation?</li>
-								<li>How many bikes tare needed to make the scheme successful/profitable.</li>
-							</ol>
-							
-								
-					</div>
-					
-				</div>
-			</div>
-		</section>
+		</div>
 
 		<!-- JS -->
-		<script src="../../src/js/jquery-3.3.1.min.js"></script>
-		<script src="../../src/bootstrap/js/bootstrap.bundle.min.js"></script>
-		<script src="../../src/js/script.js"></script>
+		<script src="src/js/jquery-3.3.1.min.js"></script>
+		<script src="src/bootstrap/js/bootstrap.bundle.min.js"></script>
+		<script src="src/js/script.js"></script>
 		
 		<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
 		<style>
         	.prettyprint ol.linenums > li { list-style-type: decimal; }
     	</style>
-
+		
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+		<script src="src/js/grid.js"></script>
+		<script>
+			$(function() {
+				Grid.init();
+			});
+		</script>
 	</body>
 </html>
