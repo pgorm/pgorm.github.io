@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<!-- META -->
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<!-- FILL THIS IN YOURSELF -->
+		<meta name="description" content="A product management and engineering blog.">
+		<meta name="keywords" content="product, management, engineering, blog, electronics, market">
+		<meta name="author" content="Peter Gorman">
+
+		<!-- STYLESHEETS -->
+		<link rel="icon" href="../../src/img/icons.png">
+		<link rel="stylesheet" type="text/css" href="../../src/css/style.css"/>
+
+		<link rel="stylesheet" type="text/css" href="../../src/bootstrap/css/bootstrap.min.css"/>
+		<link href="../../src/css/fontawesome-all.min.css" rel="stylesheet">
+
+		<!-- TITLE -->
+		<title>Peter Gorman</title>
+	</head>
+	<body id="page-top">
+		<nav class="navbar navbar-expand-md navbar-static-top my-navbar">
+			<div class="container-fluid">
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+					<i class="fas fa-bars"> </i>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarResponsive">
+					<ul class="navbar-nav ml-auto">
+						<li class="nav-item">
+							<a class="nav-link js-scroll-trigger" href="../../">Home</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link js-scroll-trigger" href="../../about/">About</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link js-scroll-trigger" href="../../t/">Thoughts</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link js-scroll-trigger" href="CV.pdf">CV</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<div class="container-fluid my-navbar-lower">
+			<h3 class="navbar-brand"> Peter Gorman
+			<br>
+			<small class="navbar-brand-small"> Engineering, Product & Strategy </small></h3>
+		</div>
+		<a href="../../">
+			<div class="back-button">
+				<div style="height: 100%; width: 100%; position: relative;" title="Back a page">
+					<i class="fas fa-angle-left"> </i>
+					<i class="fas fa-angle-double-left"> </i>
+				</div>
+			</div>
+		</a>
+		<section>
+			<br>
+			<div class="row">
+				<div class="header-img" style="max-height: 700px;">
+					<img src="../../src/img/ARMHack/img_20160131_103848.jpg"/>
+				</div>
+			</div>
+			<div class="container my-container">
+				<div class="row">
+					<div class="my-picture-content">
+						<h5><strong>Introduction</strong></h5>
+						<p>
+						My University recently hosted a 24-hour hackathon which was sponsored by ARM. I joined a team and entered with four other people across a couple of different academic disciplines (Electrical and Electronic Engineering as well as Computer Science).  We decided that we wanted to make an interactive device with a useful application.  Over the course of the week we developed several different ideas but decided to create an interactive glove.  This idea was developed and we decided to create a sign language interpreter glove that could be used to translate sign language letters to an audio output.
+						<p>
+						The glove consisted of five push-button sensors on each finger of the glove.  As the fingers were pressed down in different hand positions they signified different letters of the sign language alphabet (we used ASL (American sign language) since all of the letters could be made with only one hand).  After a hand gesture was held for several seconds the mbed LPC1768 device determined which fingers were being pressed and matched that combination against all of the letters that had been programmed in.
+						<p>
+						Each hand gesture was made so that a unique set of push buttons were pressed each time as to distinguish between each letter.  To do this we used five different bits (corresponding to the different push buttons) and made sure that each letter only occupied one of the 32 possible states.  Unfortunately, several of the letters clashed in their combinations and we had to add a sixth state as to distinguish between letters further.  To do this we added an accelerometer (that was controlled by an Arduino since the mbed device struggled with the connections to it) so that when certain hand gestures were made, the current angle of accelerometer would determine a different letter.  As a result, we programmed in a degree of variability for each letter so that each letter could be formed faster and with less effort.
+						<p>
+						We then programmed the mbed device to string letters together with a corresponding wait gesture in between each letter so that a word could be recognised.  We then connected the word to some audio software so that it was spoken aloud.  Overall the project was successful in demonstrating this language conversion.  The project also highlighted a wider range of other practical capabilities that an interactive glove might have such as playing games and displaying data.
+						<p>
+						<h5><strong>Project Build</strong></h5>
+						<p>
+						The two main components that we needed to collect were the gloves and the mbed LPC1768 device.
+						<p>
+						<div class="center-imgs">
+							<img class="center" src="../../src/img/ARMHack/img_20160130_122938.jpg"  style="width:300px;height:225px;"/>
+							<img class="center" src="../../src/img/ARMHack/img_20160130_155325.jpg"  style="width:300px;height:225px;"/>
+						</div>
+						<p>
+						Each ASL hand letter was mapped out using five different bits to represent the five push buttons and a sixth bit for the accelerometer.
+						<p>
+						<div class="center-imgs">
+							<img src="../../src/img/ARMHack/img_20160131_105602.jpg"  style="width:225px;height:250px;"/>
+							<img src="../../src/img/ARMHack/img_20160130_171840.jpg"  style="width:375px;height:250px;"/>
+						</div>
+						<p>
+						The mbed device was tested with the operation of the push buttons.
+						<p>
+						<div class="center-imgs">
+							<img src="../../src/img/ARMHack/img_20160130_165341.jpg"  style="width:300px;height:225px;"/>
+							<img src="../../src/img/ARMHack/img_20160131_112917.jpg"  style="width:300px;height:225px;"/>
+						</div>
+						<p>
+						The push buttons were then soldered to bell wire that would lace the outer side of the glove to the mbed.
+						<p>
+						<div class="center-imgs">
+							<img src="../../src/img/ARMHack/img_20160130_193700.jpg"  style="width:300px;height:225px;"/>
+							<img src="../../src/img/ARMHack/img_20160130_191857.jpg"  style="width:300px;height:225px;"/>
+						</div>
+						<p>
+						The push buttons were attached to the glove and an additional piece of cardboard was stuck onto the button as it was hard to press some of the buttons down when the fingers were stretched.
+						<p>
+						<div class="center-imgs">
+							<img src="../../src/img/ARMHack/img_20160131_044243.jpg"  style="width:300px;height:225px;"/>
+							<img src="../../src/img/ARMHack/img_20160131_103852.jpg"  style="width:300px;height:225px;"/>
+						</div>
+						<p>
+						The accelerometer was attached to the glove and it was connected to the Arduino and mbed and then strapped to the wrist of the user.
+						<p>
+						<div class="center-imgs">
+							<img src="../../src/img/ARMHack/img_20160131_103848.jpg"  style="width:300px;height:225px;"/>
+							<img src="../../src/img/ARMHack/img_20160131_103839.jpg"  style="width:300px;height:225px;"/>
+						</div>
+						<p>
+						After 24-hours all of the projects were showcased!
+						<p>
+						<div class="center-imgs">
+							<img src="../../src/img/ARMHack/img_20160130_170918.jpg"  style="width:300px;height:225px;"/>
+							<img src="../../src/img/ARMHack/img_20160131_130534.jpg"  style="width:300px;height:225px;"/>
+						</div>
+						<p>
+						Our team won the 3rd place prize for: Most Commendable Project.	
+						
+					</div>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- JS -->
+		<script src="../../src/js/jquery-3.3.1.min.js"></script>
+		<script src="../../src/bootstrap/js/bootstrap.bundle.min.js"></script>
+		<script src="../../src/js/script.js"></script>
+		
+		<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+		<style>
+        	.prettyprint ol.linenums > li { list-style-type: decimal; }
+    	</style>
+
+	</body>
+</html>

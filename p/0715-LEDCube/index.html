@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<!-- META -->
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<!-- FILL THIS IN YOURSELF -->
+		<meta name="description" content="A product management and engineering blog.">
+		<meta name="keywords" content="product, management, engineering, blog, electronics, market">
+		<meta name="author" content="Peter Gorman">
+
+		<!-- STYLESHEETS -->
+		<link rel="icon" href="../../src/img/icons.png">
+		<link rel="stylesheet" type="text/css" href="../../src/css/style.css"/>
+
+		<link rel="stylesheet" type="text/css" href="../../src/bootstrap/css/bootstrap.min.css"/>
+		<link href="../../src/css/fontawesome-all.min.css" rel="stylesheet">
+
+		<!-- TITLE -->
+		<title>Peter Gorman</title>
+	</head>
+	<body id="page-top">
+		<nav class="navbar navbar-expand-md navbar-static-top my-navbar">
+			<div class="container-fluid">
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+					<i class="fas fa-bars"> </i>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarResponsive">
+					<ul class="navbar-nav ml-auto">
+						<li class="nav-item">
+							<a class="nav-link js-scroll-trigger" href="../../">Home</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link js-scroll-trigger" href="../../about/">About</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link js-scroll-trigger" href="../../t/">Thoughts</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link js-scroll-trigger" href="CV.pdf">CV</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<div class="container-fluid my-navbar-lower">
+			<h3 class="navbar-brand"> Peter Gorman
+			<br>
+			<small class="navbar-brand-small"> Engineering, Product & Strategy </small></h3>
+		</div>
+		<a href="../../">
+			<div class="back-button">
+				<div style="height: 100%; width: 100%; position: relative;" title="Back a page">
+					<i class="fas fa-angle-left"> </i>
+					<i class="fas fa-angle-double-left"> </i>
+				</div>
+			</div>
+		</a>
+		<section>
+			<br>
+			<div class="row">
+				<div class="header-img" style="max-height: 700px;">
+					<img src="../../src/img/Cube/Cube_Header.jpg"/>
+				</div>
+			</div>
+			<div class="container my-container">
+				<div class="row">
+					<div class="my-picture-content">
+						<h5><strong>Introduction</strong></h5>
+						<p>
+							For this project I wanted to create a three-dimensional LED cube that could be controlled by an Arduino microcontroller. 
+							The cube consists of 64 LED’s arranged into 4 layers. The 16 LED’s in each layer are soldered into a 4 by 4 grid. 
+							After this the Arduino was connected to the cube so that it could control the voltage and ground connections to the rows and columns of the cube. 
+							This allowed the Arduino to produce a series of patterns and displays on the cube.
+						</p>
+						<h5><strong>How does it work?</strong></h5>
+						<p>
+							The LED’s are soldered together so that all of the LED’s in a row share a common cathode. An additional wire is soldered onto each row and it connects 
+							each row to a ground pin (0v) on the Arduino (4 in total). All of the LED’s in a column share a common anode and the columns are connected to pins on 
+							the Arduino that act as VCC (5v) (16 in total). As a result only 20 pins are required to control all of the LED’s in the cube then the 64 pins 
+							otherwise if each LED was connected individually.
+						</p>
+							In order to turn a single LED on I needed to supply ground to that layer and 5v to the other three layers. I also need to supply 5v to the column that 
+							the LED was in and ground to the other 15 pins. As a result, individual rows, columns and LED’s could be lighted up at any one point. However a problem 
+							arises if you want to turn on 2 LED’s that are located at different positions in different columns.  The diagram below helps to illustrate this.
+						<p>
+						<div class="center-imgs">
+							<img src="../../src/img/Cube/cubev1.jpg"  style="width:400px;height:300px;"/>
+						</div>
+						</p>
+						If we wanted to light up an LED at (0,0,0) and another one in the opposite corner at (3,3,3). 5v would need to be supplied to both of those columns as well as a ground connection to the two rows. However this would also causes the two LED’s at (0,0,3) and (3,3,0) to turn on as they have power and ground connections as well.
+						<p>
+						<div class="center-imgs">
+							<img src="../../src/img/Cube/cubev2.jpg"  style="width:400px;height:300px;"/>
+						</div>  
+						</p>
+						In order to solve this problem, VCC needs to switch between each layer very fast so that the human eye cannot recognise the delay of one LED turning off while the other switches on, and vice versa. This creates the desired effect of having both of the LED’s on at the same time using the effect known as persistence of vision.
+						</p>
+						<h5><strong>Project Build</strong></h5>
+						<p>
+						The pictures and text below show the process of the cube being built:
+						</p>
+						<div class="center-imgs">
+							<img src="../../src/img/Cube/img_20150722_165927.jpg"  style="width:250px;height:300px;"/>
+						</div>
+						<p>
+						The image above shows the components that were used in order to make the cube. These were:
+						</p>
+						<ul class="list-block">
+							<li>x64 – LED’s</li>
+							<li>x4 – 100 Ohm Resistors</li>
+							<li>x1 - Pin Header</li>
+							<li>Jumper Wires</li>
+							<li>Solder</li>
+							<li>Perf Board</li>
+							<li>Arduino</li>
+						</ul>
+						<div class="center-imgs">
+							<img src="../../src/img/Cube/img_20150715_152609.jpg"  style="width:300px;height:225px;"/>
+							<img src="../../src/img/Cube/img_20150715_220609.jpg"  style="width:300px;height:225px;"/>
+						</div>
+						<p>
+						To start the project I printed a sheet of paper with the formatting of the LED legs and stuck that onto a piece of cardboard. I then pierced holes in the cardboard and stuck the top of the LED’s through. After this I soldered the cathode legs of the LED’s together while leaving the anode leg pointing upwards.
+						</p>
+						<div class="center-imgs">
+							<img src="../../src/img/Cube/img_20150716_125427.jpg"  style="width:300px;height:225px;"/>
+							<img src="../../src/img/Cube/img_20150716_122343.jpg"  style="width:300px;height:225px;"/>
+						</div>
+						<p>
+						I did this process four times for each of the layers.
+						</p>
+						<div class="center-imgs">
+							<img src="../../src/img/Cube/img_20150716_142437.jpg"  style="width:300px;height:225px;"/>
+							<img src="../../src/img/Cube/img_20150716_143744.jpg"  style="width:300px;height:225px;"/>
+						</div>
+						<p>
+						Following this I started to solder the individual layers together. I needed to solder on an extra wire to the anode of each LED so that the spacing between the individual LED layers was large enough for the structure to resemble a cube shape. I used a crocodile clip to hold individual wires and layers in place so that I could solder them.
+						</p>
+						<div class="center-imgs">
+							<img src="../../src/img/Cube/img_20150716_143744.jpg"  style="width:300px;height:225px;"/>
+							<img src="../../src/img/Cube/img_20150717_144346.jpg"  style="width:300px;height:225px;"/>
+						</div>
+						<p>
+						The process was repeated two more times as the layers were soldered together.
+						</p>
+						<div class="center-imgs">
+							<img src="../../src/img/Cube/img_20150721_182627.jpg"  style="width:300px;height:225px;"/>
+							<img src="../../src/img/Cube/img_20150721_182713.jpg"  style="width:300px;height:225px;"/>
+						</div>
+						<p>
+						I soldered wires from each layer down to the base to act as the ground connections between each layer and the Arduino. In addition I soldered some extra wire onto the end of each column so that the legs of the structure were long enough to fit through the prototype board (which acts as a base).
+						</p>
+						<div class="center-imgs">
+							<img src="../../src/img/Cube/img_20150717_152526.jpg"  style="width:300px;height:225px;"/>
+							<img src="../../src/img/Cube/img_20150717_152153.jpg"  style="width:300px;height:225px;"/>
+						</div>
+						<p>
+						The pictures above show the structure of the cube after it was soldered together.
+						</p>
+						<div class="center-imgs">
+							<img src="../../src/img/Cube/img_20150721_221125.jpg"  style="width:300px;height:225px;"/>
+							<img src="../../src/img/Cube/img_20150721_222253.jpg"  style="width:300px;height:225px;"/>
+						</div>
+						<p>
+						The legs of each column were carefully placed through the board and the were then soldered to it with excess wire being cut off.
+						</p>
+						<div class="center-imgs">
+							<img src="../../src/img/Cube/img_20150723_162131.jpg"  style="width:300px;height:225px;"/>
+							<img src="../../src/img/Cube/img_20150723_170303.jpg"  style="width:300px;height:225px;"/>
+						</div>
+						<p>
+						Four resistors were attached to the ground columns and jumper wires were connected to each column and row connection. The jumper wires were then soldered to three header pins to make it easier to connect to the Arduino.
+						</p>
+						<div class="center-imgs">
+							<img src="../../src/img/Cube/img_20150723_182309.jpg"  style="width:300px;height:225px;"/>
+							<img src="../../src/img/Cube/img_20150723_182856.jpg"  style="width:300px;height:225px;"/>
+						</div>
+						<p>
+						The code was then uploaded to the Arduino and the power was turned on.
+						</p>
+						<div class="center-imgs">
+							<img src="../../src/img/Cube/img_20150723_181906.jpg"  style="width:300px;height:225px;"/>
+							<img src="../../src/img/Cube/img_20150723_181811.jpg"  style="width:300px;height:225px;"/>
+						</div>
+						<p>
+						Lights out; <del>Party</del> Power<del></del><del></del> on!
+						</p>
+						<h5><strong>Project Build</strong></h5>
+						<ul class="list-block">
+							<li>The anode leg of each LED was not long enough for the layers to be soldered together to resemble a cubic shape. As a result I soldered an extra wire onto the end of each leg to increase the distance between layers.</li>
+							<li>The solution above created an additional problem which was that the previous soldered connection between the leg and the extra wire heated up and became loose as I soldered two layers together. To solve this I created a greater overlap between soldered wires so that the connection was stronger.</li>
+						</ul>
+						<h5><strong>Coding the Cube!</strong></h5>
+						<p>
+						After downloading code to make patterns and effects on the cube, I decided to write a couple of my own sequences. The first pattern that I programmed was the effect of lighting up the outer LED’s in a circular pattern from bottom to top and then doing that to the inner LED’s as well but lighting them up from top to bottom. The video below shows this:
+						</p>
+						<div class="center-imgs">
+							<iframe class="youtube-video" src="https://www.youtube.com/embed/KosFYk9NpTE?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen> </iframe>
+						</div>
+						<p>
+						The code below shows how this was programmed (the Arduino IDE uses elements of C and C++ to program the microcontroller):
+						</p>
+						
+						<pre class="prettyprint linenums">
+void Loopallleds()
+{
+  //Creating an array of the outside LED's
+  int outisdeloop[12] = {0,1,2,3,7,11,15,14,13,12,8,4};
+  //Creating an array of the inside LED's
+  int insideloop[4] = {5,6,10,9};
+  //Delays in the program (in ms)
+  int delay1 = 15;
+  int delay2 = 25;
+   
+  //This function turns all of the LED's off.
+  AllLedsOff();
+   
+  //Loops four times for all of the layers
+    for(int j = 3; j >= 0; j--)
+    {
+      digitalWrite(layer[j], 1);
+      //Loops around all of the outside LED's turning them on and then off.
+      for(int i = 0; i &#60; 12; i++)
+      {
+        digitalWrite(column[array[i]], 0);
+        delay(delay1);
+        digitalWrite(column[array[i]], 1);
+        delay(delay1);
+      }
+      digitalWrite(layer[j], 0);
+    }
+     
+    //Loops around all of the inside LED's turning them on and then off.
+    for(int j = 0; j &#60; 4; j++)
+    {
+      digitalWrite(layer[j], 1);
+      for(int i = 0; i &#60; 4; i++)
+      {
+        digitalWrite(column[array2[i]], 0);
+        delay(delay2);
+        digitalWrite(column[array2[i]], 1);
+        delay(delay2);
+      }
+      digitalWrite(layer[j], 0);
+    }
+}
+						</pre>
+						<p>
+						Another pattern that I decided to program was to have each layer of the cube flash on from bottom to top. After this the LED’s would create a rain effect as the columns were turned off in series. This can be seen in the video below with the code for it beneath that:
+						<br>
+						<div class="center-imgs">
+							<iframe class="youtube-video" src="https://www.youtube.com/embed/pKl9MYOpTa8?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen> </iframe>
+						</div>
+						</p>
+						<pre class="prettyprint linenums">
+void Layersflashandfall()
+{
+  //Delays in the program (in ms)
+  int delay1 = 100;
+  //This array stores the column numbers of the cube
+  int allcolumns[16] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13 ,14, 15};
+  //Maximum index number of the array
+  int arrindex = 15;
+  //Size of the array
+  int arrsize = 16;
+   
+  //Loops through all four of the layers turning them off
+  for(int i = 0; i &#60; 4; i++)
+  {
+    digitalWrite(layer[i], 0);
+  }
+     
+    //Loops through all of the layers.
+    for(int i = 4; i !=0; i--)
+    {
+      //Flashes the layer on quicker increments 
+      int delvar = 150;
+      while (delvar != 0)
+      {
+        digitalWrite(layer[i-1], 1);
+        delay(delvar);
+        digitalWrite(layer[i-1], 0);
+        delay(delvar);
+        delvar -= 15;
+      }
+      //Keeps the layer lit up after it has flashed on
+      if (i == 4)
+      {
+        digitalWrite(layer[i-1], 1);
+      }
+      else if (i == 3)
+      {
+        digitalWrite(layer[i-1], 1);
+      }
+      else if(i == 2)
+      {
+        digitalWrite(layer[i-1], 1);
+      }
+      else
+      {
+        digitalWrite(layer[i-1], 1); 
+      }
+    }
+ 
+  delay(500);
+     
+  //Turns all of the LED's off
+  AllLedsOff();
+   
+  //Produces the rain effect 16 times as one LED is removed each time
+  for(int i = 0; i != 16; i++)
+  {
+    //Turns all of the columns on
+    for(int p = 0; p &#60; arrindex; p++)
+    {
+      digitalWrite(column[p], 0);
+    }
+     
+    //Turns on the top LED of each column and the one below it adding, 
+    //a delay afterwards to create the rain effect.
+    digitalWrite(layer[0], 1);
+    delay(delay1+50);
+    digitalWrite(layer[0], 0);
+    digitalWrite(layer[1], 1);
+    delay(delay1);
+    digitalWrite(layer[1], 0);
+    digitalWrite(layer[2], 1);
+    delay(delay1);
+    digitalWrite(layer[2], 0);
+    digitalWrite(layer[3], 1);
+    delay(delay1+50);
+    digitalWrite(layer[3], 0);
+     
+    //Turns all of the columns off
+    for(int p = 0; p &#60; arrindex; p++)
+    {
+      digitalWrite(column[p], 1);
+    }
+     
+    //Turns a random column off by removing a column from the array.
+    int randomColumn = random(0,arrsize);
+    for(int i = 0; i &#60; arrsize; i++)
+    {
+      if(allcolumns[i] == randomColumn)
+      {
+        for(int j = i; j &#60; arrsize; j++)
+        {
+          allcolumns[j] = allcolumns[j+1];
+        }
+        arrsize--;
+      }
+    }   
+    arrindex--;
+  }
+}
+					</pre>	
+						
+					</div>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- JS -->
+		<script src="../../src/js/jquery-3.3.1.min.js"></script>
+		<script src="../../src/bootstrap/js/bootstrap.bundle.min.js"></script>
+		<script src="../../src/js/script.js"></script>
+		
+		<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+		<style>
+        	.prettyprint ol.linenums > li { list-style-type: decimal; }
+    	</style>
+
+	</body>
+</html>
