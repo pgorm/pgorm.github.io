@@ -213,7 +213,7 @@ ul{
 }
 
 ul li{
-	min-height: 34px;
+	/*min-height: 34px;*/
 }
 
 ul.indented{
