@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<!-- META -->
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<!-- FILL THIS IN YOURSELF -->
+		<meta name="description" content="A product management and engineering blog.">
+		<meta name="keywords" content="product, management, engineering, blog, electronics, market">
+		<meta name="author" content="Peter Gorman">
+
+		<!-- STYLESHEETS -->
+		<link rel="icon" href="../../src/img/icons.png">
+		<link rel="stylesheet" type="text/css" href="../../src/css/style.css"/>
+
+		<link rel="stylesheet" type="text/css" href="../../src/bootstrap/css/bootstrap.min.css"/>
+		<link href="../../src/css/fontawesome-all.min.css" rel="stylesheet">
+
+		<!-- TITLE -->
+		<title>Peter Gorman</title>
+		
+		
+	</head>
+	
+	<body id="page-top">
+		<nav class="navbar navbar-expand-md navbar-static-top my-navbar">
+			<div class="container-fluid">
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+					<i class="fas fa-bars"> </i>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarResponsive">
+					<ul class="navbar-nav ml-auto">
+						<li class="nav-item">
+							<a class="nav-link js-scroll-trigger" href="../../">Home</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link js-scroll-trigger" href="../../about/">About</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link js-scroll-trigger" href="../../t/">Thoughts</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link js-scroll-trigger" href="../../CV.pdf" target="_blank">CV</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<div class="container-fluid my-navbar-lower">
+			<h3 class="navbar-brand"> Peter Gorman
+			<br>
+			<small class="navbar-brand-small"> Engineering, Product & Strategy </small></h3>
+		</div>
+		<a href="../../">
+			<div class="back-button">
+				<div style="height: 100%; width: 100%; position: relative;" title="Back a page">
+					<i class="fas fa-angle-left"> </i>
+					<i class="fas fa-angle-double-left"> </i>
+				</div>
+			</div>
+		</a>
+		<section>
+			<br>
+			<!-- <div class="row">
+				<div class="header-img" style="max-height: 700px;">
+					<img src="../../src/img/Hack/Bris3.jpg"/>
+				</div>
+			</div> -->
+			<div class="container my-container">
+				<div class="row">
+					<div class="my-picture-content">					
+<p style="margin-bottom: .0001pt;"><strong>Business opportunity by Market Size</strong></p>
+<p>Market size calculations assess a business opportunity at a certain point in time or over successive periods.&nbsp; The TAM (Total Addressable Market) measures the size of a market that a service/product is in (inclusive of all competition).&nbsp; This post explores a model for calculating market size while highlighting potential risks and improvements to the analysis.</p>
+<p style="margin-bottom: .0001pt;"><strong>Estimating NPU (Neural Processor Unit) Market Size</strong></p>
+<p>NPUs are slowly gaining ground in the mobile processor market and it would be interesting to forecast the uptake of these chips over the next five years.&nbsp; Applications for NPUs in mobile continues to increase alongside advances in NN (Neural Networks) algorithms and ML applications (Speech to Text, Face/Voice Recognition, Digital Assistant).&nbsp; The image below shows my back of the envelope calculation for the TAM in USD over the next five years.&nbsp;</p>
+
+<div class="center-imgs">
+<img src="../../src/img/MarketSize/MarketImage1.jpg"  style="width:824px;height:257px;"/>
+</div>
+<p>
+</p>
+<p>The math here is quite dry but what makes these calculations interesting are the different assumptions and approaches that you can make when concluding on a value.&nbsp; Here&rsquo;s how I came up with the TAM:</p>
+<div class="center-imgs">
+<img src="../../src/img/MarketSize/MarketImage2.jpg"  style="width:801px;height:398px;" align="middle"/>
+</div>
+<p>
+</p>
+
+<p style="margin-bottom: .0001pt;"><strong>Rationale</strong></p>
+<ul>
+<li># of Smartphones
+<ul>
+<li>An analysis from CSS shows that the mobile market is project to have a flat shipment of 1.9 billion units from 2019 over the next 5 years. <a href="https://www.ccsinsight.com/blog/global-mobile-phone-sales-will-decline-in-2019/">https://www.ccsinsight.com/blog/global-mobile-phone-sales-will-decline-in-2019/</a></li>
+</ul>
+</li>
+<li># of Phones that are Smartphones &amp; ~ # of smartphones that are Entry, Mid and Premium
+<ul>
+<li>Arm Roadshow slides in Q4 2014 indicated the proportion of smartphones across each category.&nbsp; The numbers have been scaled to reflect the shipment of phones in 2019.</li>
+</ul>
+</li>
+<li># of Application Processors per Smartphone
+<ul>
+<li>Arm Roadshow slides in Q4 2014 estimate the average number of processors per Entry, Mid and Premium Smartphone.</li>
+<li>Increase in average of one app processor per year as phones increase in performance.</li>
+</ul>
+</li>
+<li>% of Application Processors with an NPU in 2019
+<ul>
+	<li><a href="http://ai-benchmark.com/">http://ai-benchmark.com/</a> shows NPUs were shipped in the majority of SoC (12 total) for premium smartphones in Q418/Q12019.</li>
+	<li>These SoCs had an average of 1 NPU. Therefore the % of App Processors that are NPUs in 2019 is 1 out of a total of 26 app processors in all smartphones.&nbsp;</li>
+	<ul>
+		<li>26 = 15 + 8 + 3 = 26 and 1/26 ~ 4%</li>
+	</ul>
+	<li><p style="margin-top: -15px;">Increase of 2% per year for proportion of phones incorporating an NPU. This was an arbitrary decision and scales to 15% in 2024.</p></li>
+</ul>
+</li>
+<li>&nbsp;TAM
+<ul>
+<li>Total # of NN Application processors multiplied by a proposed cost of an NPU ($10)</li>
+</ul>
+</li>
+</ul>
+<p style="margin-bottom: .0001pt;"><strong>Risks to the Model</strong></p>
+<ul>
+<li>Change to mobile market growth (slowdown/increase) causing deviation to the model e.g. economic crisis</li>
+<li>Social trends in buying premium mobiles affects flagship phone sales</li>
+<li>Model needs to be adjusted for inflation</li>
+<li>Herd Behavior (basing calculations on other models/estimations) may have affected the accuracy of the model</li>
+</ul>
+<p>&nbsp;</p>
+					
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- JS -->
+		<script src="../../src/js/jquery-3.3.1.min.js"></script>
+		<script src="../../src/bootstrap/js/bootstrap.bundle.min.js"></script>
+		<script src="../../src/js/script.js"></script>
+		
+		<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+		<style>
+        	.prettyprint ol.linenums > li { list-style-type: decimal; }
+    	</style>
+
+	</body>
+</html>
